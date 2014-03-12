@@ -3,7 +3,7 @@ $( document ).ready(function() {
     var bg = $("#bg");
 
     var removeBg = function() {
-        bg.removeClass("office public concert");
+        bg.removeClass("private family work public");
     }
 
     var hide = function(e) {
@@ -22,6 +22,7 @@ $( document ).ready(function() {
             }
             else if($(e).data("s").indexOf('public-name') != -1) {
                 $(e).find('.text').addClass('blur');
+                $(e).find('.image').addClass('blur');
             }
             else {
                 hide(e);
@@ -31,12 +32,12 @@ $( document ).ready(function() {
 
     var makeFamily = function() {
         $(".entry").each(function(i, e) {
-            $(e).find('.picture').addClass('blur');
             if($(e).data("s").indexOf('family-all') != -1) {
                 //do nottin
             }
             else if($(e).data("s").indexOf('family-name') != -1) {
                 $(e).find('.text').addClass('blur');
+                $(e).find('.image').addClass('blur');
             }
             else {
                 hide(e);
@@ -44,33 +45,65 @@ $( document ).ready(function() {
         });
     }
 
-    var revert = function() {
+    var makeWork = function() {
         $(".entry").each(function(i, e) {
-            show(e);
-            $(e).find('.picture').removeClass('blur');
-            $(e).find('.text').removeClass('blur');
+            if($(e).data("s").indexOf('work-all') != -1) {
+                //do nottin
+            }
+            else if($(e).data("s").indexOf('work-name') != -1) {
+                $(e).find('.text').addClass('blur');
+                $(e).find('.image').addClass('blur');
+            }
+            else {
+                hide(e);
+            }
+        });
+    }
+
+    var revert = function(e) {
+        show(e);
+        $(e).find('.picture').removeClass('blur');
+        $(e).find('.text').removeClass('blur');
+        $(e).find('.image').removeClass('blur');
+    }
+
+    var revertAll = function() {
+        $(".entry").each(function(i, e) {
+            revert(e);
         })
     }
 
     $("#private").bind("click", function(e) {
         removeBg();
-        bg.addClass("office")
-        revert();
+        bg.addClass("private")
+        revertAll();
     });
 
     $("#family").bind("click", function(e) {
         removeBg();
-        bg.addClass("concert")
-        revert();
+        bg.addClass("family")
+        revertAll();
         makeFamily();
+    });
+
+    $("#work").bind("click", function(e) {
+        removeBg();
+        bg.addClass("work")
+        revertAll();
+        makeWork();
     });
 
     $("#public").bind("click", function(e) {
         removeBg();
         bg.addClass("public")
-        revert();
+        revertAll();
         makePublic();
     });
+
+    $(".entry").bind("click", function(e) {
+        console.log(e);
+        revert(e.currentTarget);
+    })
 
     // $(".entry").each(function(i, e) {
     //     if($(e).data("s").indexOf('private') != -1) {

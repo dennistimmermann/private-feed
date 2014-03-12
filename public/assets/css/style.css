@@ -17,21 +17,22 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
-    -webkit-transition: background 0.5s;
-
 }
 
-.office {
-    background-image: url(../img/office.jpg);
+.private {
+    background-color: rgb(127,199,95);
+}
+
+.family {
+    background-color: rgb(68,180,121);
+}
+
+.work {
+    background-color: rgb(35,160,148);
 }
 
 .public {
-    background-image: url(../img/public.jpg);
-}
-
-.concert {
-    background-image: url(../img/concert.jpg);
+    background-color: rgb(59,85,102);
 }
 
 .stagewrapper {
@@ -40,7 +41,7 @@ body {
     width: 404px;
     height: 727px;
     /*background: #F00;*/
-    background-image: url("../img/htcbg.png");
+    background-image: url("../img/spbg.png");
     padding-top: 80px;
     margin-top:30px;
     margin-bottom:100px;
@@ -51,8 +52,12 @@ body {
     width: 346px;
     height: 607px;
     background: rgb(220,220,220);
-    overflow: hidden;
+    overflow-y: scroll;
 
+}
+
+.stage::-webkit-scrollbar {
+    display: none;
 }
 
 .entry {
@@ -63,10 +68,10 @@ body {
 
 .entry h3 {
     color: rgb(59, 89, 152);
-    font-size: 13px;
+    font-size: 16px;
     font-weight: bold;
     list-height: 17px;
-    padding: 10px 0 4px 0;
+    padding: 16px 0 4px 0;
     /*-webkit-filter: blur(2px);*/
 }
 
@@ -75,7 +80,7 @@ body {
 }
 
 .blur {
-    -webkit-filter: blur(5px);
+    -webkit-filter: blur(7px);
 }
 
 .entry .head {
@@ -103,11 +108,15 @@ body {
 
 .entry .picture {
     display: inline-block;
-    max-width: 50px;
+    width: 50px;
     height: 50px;
     float: left;
-    padding-right: 10px;
+    margin: 6px 10px 0 6px;
     /*padding: 3px;*/
+}
+
+.entry .image {
+    height: 200px;
 }
 
 .menu {
@@ -146,10 +155,10 @@ a:hover {
 
 .hide {
     overflow: hidden;
-    height: 15px;
+    height: 25px;
     background-color: rgb(109, 132, 180);
 }
 
 .hide .hideinfo {
-    display: inline-block;
+    display: block;
 }
