@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    color: rgb(51, 51, 51);
+    font-size: 13px;
+}
+
+.bg {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-transition: background 0.5s;
+
+}
+
+.office {
+    background-image: url(../img/office.jpg);
+}
+
+.public {
+    background-image: url(../img/public.jpg);
+}
+
+.concert {
+    background-image: url(../img/concert.jpg);
+}
+
+.stagewrapper {
+    /* position: absolute; */
+    margin: 0 auto;
+    width: 404px;
+    height: 727px;
+    /*background: #F00;*/
+    background-image: url("../img/htcbg.png");
+    padding-top: 80px;
+    margin-top:30px;
+    margin-bottom:100px;
+}
+
+.stage {
+    margin: 0 auto;
+    width: 346px;
+    height: 607px;
+    background: rgb(220,220,220);
+    overflow: hidden;
+
+}
+
+.entry {
+    background-color: rgb(255,255,255);
+    margin: 15px;
+    padding: 5px;
+}
+
+.entry h3 {
+    color: rgb(59, 89, 152);
+    font-size: 13px;
+    font-weight: bold;
+    list-height: 17px;
+    padding: 10px 0 4px 0;
+    /*-webkit-filter: blur(2px);*/
+}
+
+.entry h3:last-word {
+    /*-webkit-filter: blur(0px);*/
+}
+
+.blur {
+    -webkit-filter: blur(5px);
+}
+
+.entry .head {
+    height: 50px;
+}
+
+.entry .time,
+.entry .info {
+    font-size: 11px;
+    color: rgb(153, 153, 153);
+    /*padding-top: 8px;*/
+}
+
+.entry .info {
+    text-align: right;
+}
+
+.entry .text {
+    padding: 0px 0 10px 0;
+}
+
+.entry .content {
+    padding: 7px;
+}
+
+.entry .picture {
+    display: inline-block;
+    max-width: 50px;
+    height: 50px;
+    float: left;
+    padding-right: 10px;
+    /*padding: 3px;*/
+}
+
+.menu {
+    text-align: center;
+    padding-top: 30px;
+
+    font-weight: 100;
+}
+
+.menu ul li {
+    display: inline-block;
+    font-size: 28px;
+    text-transform: uppercase;
+    padding: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+
+}
+
+.hideinfo {
+    display: none;
+    color: rgb(255, 255, 255);
+    padding-bottom: 50px;
+}
+
+a {
+    text-decoration: none;
+    -webkit-transition: color 0.5s;
+        color: rgb(255, 255, 255);
+
+}
+
+a:hover {
+    color: rgb(20, 20, 20);
+
+}
+
+.hide {
+    overflow: hidden;
+    height: 15px;
+    background-color: rgb(109, 132, 180);
+}
+
+.hide .hideinfo {
+    display: inline-block;
+}
